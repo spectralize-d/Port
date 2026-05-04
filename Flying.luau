@@ -1,4 +1,3 @@
-
 -- made by MaidModeZen; github: spectralize-d; im getting desperate for my application to be accepted!!
 
 -- Services
@@ -8,25 +7,27 @@ const UserInputService = game:GetService("UserInputService")
 local flightSpeed    = 50                 -- The speed at which the player flies
 local keyToToggleFly = Enum.KeyCode.F  -- Key to toggle fly mode on PC (mobile uses a button)
 
--- Variables for ease of use
+-- constants start
 const player    = game.Players.LocalPlayer
 const character = player.Character or player.CharacterAdded:Wait()
 const Humanoid  = character:WaitForChild("Humanoid")
 
 -- Load animations for each flying direction
-local FlyUpAnim      = Humanoid:LoadAnimation(script.FlyUpAnim)
-local FlyDownAnim    = Humanoid:LoadAnimation(script.FlyDownAnim)
-local FlyLeftAnim    = Humanoid:LoadAnimation(script.FlyLeftAnim)
-local FlyRightAnim   = Humanoid:LoadAnimation(script.FlyRightAnim)
-local FlyForwardAnim = Humanoid:LoadAnimation(script.FlyFowardAnim)
-local FlyBackAnim    = Humanoid:LoadAnimation(script.FlyBackAnim)
-local FlyIdleAnim    = Humanoid:LoadAnimation(script.FlyIdleAnim)
+const FlyUpAnim      = Humanoid:LoadAnimation(script.FlyUpAnim)
+const FlyDownAnim    = Humanoid:LoadAnimation(script.FlyDownAnim)
+const FlyLeftAnim    = Humanoid:LoadAnimation(script.FlyLeftAnim)
+const FlyRightAnim   = Humanoid:LoadAnimation(script.FlyRightAnim)
+const FlyForwardAnim = Humanoid:LoadAnimation(script.FlyFowardAnim)
+const FlyBackAnim    = Humanoid:LoadAnimation(script.FlyBackAnim)
+const FlyIdleAnim    = Humanoid:LoadAnimation(script.FlyIdleAnim)
+
+const isMobile = UserInputService.TouchEnabled
+-- constants end
 
 local mouse = player:GetMouse()
 local flying = false
 local bodyGyro, bodyVelocity
 
-local isMobile = UserInputService.TouchEnabled
 
 -- Input states for direction
 local moveForward = false
