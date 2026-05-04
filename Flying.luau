@@ -102,7 +102,7 @@ local function stopFlying()
 	if bodyGyro then bodyGyro:Destroy() end
 end
 
--- Function to create mobile buttons using scale
+-- Initialize mobile buttons and their variables
 local function createMobileControls()
 	forwardButton = (script.Parent.Parent.FlyForwardBtn)
 	backwardButton = (script.Parent.Parent.FlyBackBtn)
