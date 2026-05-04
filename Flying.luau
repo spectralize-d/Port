@@ -1,4 +1,5 @@
 -- made by MaidModeZen; github: spectralize-d; im getting desperate for my application to be accepted!!
+-- made by MaidModeZen; github: spectralize-d
 
 -- Services
 const UserInputService = game:GetService("UserInputService")
@@ -40,12 +41,12 @@ local moveDown = false
 -- Mobile UI buttons
 local forwardButton, backwardButton, leftButton, rightButton, upButton, downButton, activateButton
 
--- Function to start flying
+-- start flying
 local function startFlying()
 	FlyIdleAnim:Play()
 	local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 
-	-- Create BodyVelocity and BodyGyro for flying
+	-- Create BodyVelocity and BodyGyro for movement
 	bodyVelocity = Instance.new("BodyVelocity")
 	bodyVelocity.Velocity = Vector3.new(0, 0, 0)
 	bodyVelocity.MaxForce = Vector3.new(100000, 100000, 100000)
@@ -57,7 +58,7 @@ local function startFlying()
 	bodyGyro.P = 10000
 	bodyGyro.Parent = humanoidRootPart
 
-	-- Flying loop
+	-- Flying loop; runs every frame before being rendered
 	local flyLoop
 	flyLoop = game:GetService("RunService").RenderStepped:Connect(function()
 		-- Update BodyGyro to match the player's camera orientation
