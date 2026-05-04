@@ -1,5 +1,4 @@
 -- made by MaidModeZen; github: spectralize-d; im getting desperate for my application to be accepted!!
--- made by MaidModeZen; github: spectralize-d
 
 -- Services
 const UserInputService = game:GetService("UserInputService")
